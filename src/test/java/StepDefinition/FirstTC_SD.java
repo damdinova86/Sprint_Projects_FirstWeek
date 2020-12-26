@@ -13,6 +13,8 @@ public class FirstTC_SD {
     HomePage mPage = new HomePage();
     MyAccountPage nPage = new MyAccountPage();
 
+    String classCode;
+
     @Given("^I am on scholastic landing page$")
     public void launchWebPage() {
     }
@@ -142,7 +144,7 @@ public class FirstTC_SD {
 
     @Then("^I save class code on Home-Page$")
     public void ClassCodeOnHomePage() {
-        mPage.saveClassCode();
+        classCode= mPage.saveClassCode();
     }
 
     @Then("^click My account and click Profile from dropdown$")
@@ -151,9 +153,10 @@ public class FirstTC_SD {
     }
 
 
-    @Then("^I verify if class code under MyAccount-Page is the same as on my Home-Page$")
+    @Then("^I verify if there is a CLASS CODE allocated to the teacher, present on Home-Page and MyAccount-Page.$")
     public void verifyClassCode() {
-        Assert.assertTrue(nPage.isClassCodeDisp(), "It is not the same");
+
+       Assert.assertEquals(nPage.getClassCodeOnMyAcc(),classCode, "Class  codes are not the same" );
     }
 
     @Then("I verify  if the same Teacher name is present on My Account")
@@ -162,9 +165,12 @@ public class FirstTC_SD {
         Assert.assertEquals(teacherName, nPage.teacherName(), "Different name");
     }
 
-    @Then("^I verify same school address is present as selected  while creating the account.$")
+    @Then("^I verify same school address is present as selected$")
     public void verifySchoolAddress() {
-        String schoolAddress = "568 Broadway # 2 New York, NY 10012";
+        String schoolAddress = "SCHOLASTIC+BOOK+CLUBS\n" +
+                               "568 Broadway # 2\n" +
+                               "New York, NY\n" +
+                               "10012";
         Assert.assertEquals(schoolAddress, nPage.address(), "Different addresses");
     }
 }
