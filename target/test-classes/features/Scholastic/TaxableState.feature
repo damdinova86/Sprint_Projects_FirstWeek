@@ -8,7 +8,7 @@ Feature: TaxableState
     Then I choose 'Ms' from dropdown Title
     When Type my first name 'Bal'
     And Type my last name 'Damdinova'
-    And Type my email address 'zrmyfponbf@gmail.com'
+    And Type my email address 'zrmyfppqonmn@gmail.com'
     And Type password 'poiu0987'
     Then click in the box I have read and accept the Terms of Use and Privacy Policy.
     And click Next on the button
@@ -32,4 +32,4 @@ Feature: TaxableState
     Then click My account and click Profile from dropdown
     And I verify if there is a CLASS CODE allocated to the teacher, present on Home-Page and MyAccount-Page.
     Then I verify  if the same Teacher name is present on My Account
-    And I verify same school address is present as selected  while creating the account.
+    And I verify school address is present as selected  while creating the account.

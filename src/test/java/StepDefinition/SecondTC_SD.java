@@ -1,10 +1,13 @@
 package StepDefinition;
 
+import Pages.MyAccountPage;
 import Pages.SecondTS_LandingPage;
 import cucumber.api.java.en.Then;
+import org.testng.Assert;
 
 public class SecondTC_SD {
     SecondTS_LandingPage sPage= new SecondTS_LandingPage();
+    MyAccountPage  mPage = new MyAccountPage();
 
     @Then("^click Select School State$")
     public void clickState(){
@@ -34,5 +37,14 @@ public class SecondTC_SD {
     @Then("^click Search after fill out city$")
     public void clickSearch(){
         sPage.clickSearch();
+    }
+
+    @Then("^I verify school address is present as selected  while creating the account.$")
+    public void verifySchoolAddress() {
+        String schoolAddress = "SCHOLASTIC+BOOK+CLUBS\n" +
+                "568 Broadway # 2\n" +
+                "New York, NY\n" +
+                "10012";
+        Assert.assertEquals(schoolAddress, mPage.address(), "Different addresses");
     }
 }

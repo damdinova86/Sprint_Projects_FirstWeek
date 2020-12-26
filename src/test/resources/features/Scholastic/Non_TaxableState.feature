@@ -1,6 +1,6 @@
 Feature: Non_TaxableState
 
-  Scenario: Verify all information entered right
+  Scenario: Verify all information entered right in Non-Taxable State
     When I click 'Create an Account'
     And Choose 'Teacher/Administrator/Homeschooler' from the option
     And click Next
@@ -8,7 +8,7 @@ Feature: Non_TaxableState
     Then I choose 'Ms' from dropdown Title
     When Type my first name 'Bal'
     And Type my last name 'Damdinova'
-    And Type my email address 'mmmmj@gmail.com'
+    And Type my email address 'mmjmmkju@gmail.com'
     And Type password 'poiu0987'
     Then click in the box I have read and accept the Terms of Use and Privacy Policy.
     And click Next on the button
