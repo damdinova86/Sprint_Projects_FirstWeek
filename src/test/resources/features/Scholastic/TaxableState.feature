@@ -1,3 +1,4 @@
+@scholastic
 Feature: TaxableState
 
   Scenario: Verify all information entered right in taxable State

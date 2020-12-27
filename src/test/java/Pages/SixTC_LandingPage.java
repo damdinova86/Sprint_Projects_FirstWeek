@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class SixTC_LandingPage extends BasePage{
-    By enterOrder= By.id("enter-orders");
+    By enterOrder= By.xpath("//a[@id='enter-orders'])[2]");
     By studentFryerOrder = By.xpath("//div[@class='sidecarmenu-overlay']/preceding::li[@id='student-online-orders']/preceding::li[@id='student-flyer-orders']");
     By studentName = By.id("student-name");
     By itemNumber =  By.id("item-number");
@@ -16,15 +16,17 @@ public class SixTC_LandingPage extends BasePage{
 
     public void navEnterOrder(){
         sleepMethod();
-
-        WebElement  moveTo = Web.getDriver().findElement(enterOrder);
-        Actions act= new Actions(Web.getDriver());
-        act.moveToElement(moveTo).perform();
+        sleepMethod();
+//        WebElement  moveTo = Web.getDriver().findElement(enterOrder);
+//        Actions act= new Actions(Web.getDriver());
+//        act.moveToElement(moveTo).perform();
+        clickThis(enterOrder);
 
 
     }
 
     public void clickStudentFryerOrder(){
+        sleepMethod();
         clickThis(studentFryerOrder);
     }
 

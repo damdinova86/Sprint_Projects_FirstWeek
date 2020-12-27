@@ -1,3 +1,4 @@
+@scholastic
 Feature: Non_TaxableState
 
   Scenario: Verify all information entered right in Non-Taxable State

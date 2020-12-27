@@ -53,12 +53,6 @@ public class ThirdTC_SD extends HomePage {
     }
 
 
-//    @Then("^scroll down$")
-//    public void scrollDown() {
-//        tPage.scroll();
-//    }
-
-
     @Then("^click Quick look on any book$")
     public void quickLook() {
         tPage.clickQuickLook();
@@ -69,7 +63,6 @@ public class ThirdTC_SD extends HomePage {
     public void saveItemName() {
         tPage.getTextUnderQuickLook();
     }
-
 
 
     @Then("^click star button$")
@@ -86,7 +79,6 @@ public class ThirdTC_SD extends HomePage {
     public void closeMyList() {
         tPage.closeList();
     }
-
 
     @Then("^close Quick look box$")
     public void closeQuickLook() {

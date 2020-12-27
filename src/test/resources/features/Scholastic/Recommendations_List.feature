@@ -1,3 +1,4 @@
+@scholastic
 Feature: Recommendation List
 
   Scenario: Verify Recommendations list
@@ -11,13 +12,11 @@ Feature: Recommendation List
     Then type 'Harry' in search box
     And close small PopUp
     And click magnifying glass
-#      And scroll down
     Then click Quick look on any book
     And save item name in Quick look
     And click star button
     And click Recommendations  to students
     When done click close Add to My Lists
-#    And scroll up
     And close Quick look box
     Then click My Lists
     And click Recommendations for Students

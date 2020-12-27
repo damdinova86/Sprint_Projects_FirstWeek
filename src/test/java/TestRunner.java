@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = {"stepDefinition", "DriverWrapper"},
 
         //specify tags to be  executed
-        tags = {"@login"},
+        tags = {"@scholastic"},
 
         //readable console logs
         monochrome = true,

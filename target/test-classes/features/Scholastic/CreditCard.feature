@@ -1,3 +1,4 @@
+@scholastic
 Feature: Credit card
 
   Scenario: Verify teacher can add only 3 credit cards

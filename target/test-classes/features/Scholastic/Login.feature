@@ -1,3 +1,4 @@
+@scholastic
 Feature: Login
 
   Scenario: Verify all information entered right
