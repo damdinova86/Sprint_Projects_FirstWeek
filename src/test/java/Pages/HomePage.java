@@ -9,7 +9,6 @@ public class HomePage extends BasePage {
 
 
     By closePopUp = By.xpath("//span[@class='header-message']");
-    By classCode = By.xpath("//div[text()='View & Submit']/preceding::div[@class='value']");
     By myAccount = By.xpath("//span[@class='hide-mobile user-account-name']");
     By profile = By.xpath("//a[@title='Profile']");
     By classCodeOnMyAcc= By.xpath("//div[contains(text(),'View & Submit')]/preceding::div[@class='value']");
