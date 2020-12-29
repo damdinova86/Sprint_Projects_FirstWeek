@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
@@ -78,6 +79,21 @@ public class BasePage {
     public boolean isDisplayed(By locator){
        return findElementUsingFluentWait(locator).isDisplayed();
     }
+
+    public void hoverOver(By locator) {
+        WebElement moveTo = Web.getDriver().findElement(locator);
+        Actions act = new Actions(Web.getDriver());
+        act.moveToElement(moveTo).build().perform();
+    }
+
+    public void moveToElement(By locator) {
+        WebElement moveTo = Web.getDriver().findElement(locator);
+        Actions act = new Actions(Web.getDriver());
+        act.moveToElement(moveTo).perform();
+    }
+
+
+
 
 }
 
