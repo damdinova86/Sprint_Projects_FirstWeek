@@ -42,12 +42,13 @@ public class ThirdTC_LandingPage extends BasePage {
     }
 
     public void typeEmail(String data) {
+        waitUntilElementVisible(email);
         enter(email, data);
     }
 
     public void typePassword(String data) {
         enter(password, data);
-        sleepMethod();
+
     }
 
     public void clickSignIn() {
@@ -56,8 +57,7 @@ public class ThirdTC_LandingPage extends BasePage {
     }
 
     public void closePopUpOnAccountPage() {
-        sleepMethod();
-        sleepMethod();
+      waitUntilClickable(closeWindow);
         Web.getDriver().findElement(closeWindow).click();
 
     }

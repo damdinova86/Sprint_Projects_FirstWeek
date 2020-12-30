@@ -1,10 +1,7 @@
 package Pages;
 
 import DriverWrapper.Web;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 
@@ -91,6 +88,21 @@ public class BasePage {
         Actions act = new Actions(Web.getDriver());
         act.moveToElement(moveTo).perform();
     }
+
+    public void scroll(By locator) {
+        WebElement element = Web.getDriver().findElement(locator);
+        JavascriptExecutor js = (JavascriptExecutor) Web.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+
+    public void waitUntilElementVisible(By locator){
+        WebDriverWait wait = new WebDriverWait(Web.getDriver(),10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public void waitUntilClickable(By locator){
+        WebDriverWait wait = new WebDriverWait(Web.getDriver(),10);
+        wait.until(ExpectedConditions.elementToBeClickable(locator));}
 
 
 

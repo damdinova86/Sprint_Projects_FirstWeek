@@ -63,7 +63,7 @@ public class LandingPage extends BasePage {
     }
 
     public void typeEmail(String email) {
-
+        waitUntilElementVisible(inputEmail);
         enter(inputEmail, email);
     }
 

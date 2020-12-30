@@ -57,6 +57,7 @@ public class Fifth_LandingPage extends BasePage {
     }
 
     public void typeAddress(String data) {
+        waitUntilElementVisible(address);
         enter(address, data);
     }
 

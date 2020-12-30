@@ -1,11 +1,13 @@
 package StepDefinition;
 
-import Pages.SixTC_LandingPage;
+import Pages.SFO_Page;
+import Pages.SprintSecondWeek_LandingPage;
 import cucumber.api.java.en.When;
 import org.testng.Assert;
 
 public class SixTC_ST {
-    SixTC_LandingPage sPage = new SixTC_LandingPage();
+    SprintSecondWeek_LandingPage sPage = new SprintSecondWeek_LandingPage();
+    SFO_Page sfoPage = new SFO_Page();
 
     @When("^Navigate to enter orders$")
     public void enterOrder(){
@@ -21,23 +23,23 @@ public class SixTC_ST {
 
     @When("^enter '(.+)'$")
     public void enterName(String data){
-        sPage.enterNameBox(data);
+        sfoPage.enterNameBox(data);
     }
     @When("^enter item number '(.+)'$")
     public void enterItemNum(String data){
-        sPage.enterItemNumber(data);
+        sfoPage.enterItemNumber(data);
     }
 
     @When("^click Add$")
     public void clickAdd(){
-        sPage.clickAdd();
+        sfoPage.clickAdd();
 
     }
 
     @When("^I verify teacher gets error for invalid item number$")
     public void verifyErrorMessage(){
         String message= "Please enter a valid item number.";
-        Assert.assertEquals(message, sPage.getTextError(), "Not the same error");
+        Assert.assertEquals(message, sfoPage.getTextError(), "Not the same error");
 
     }
 }
