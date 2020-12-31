@@ -1,11 +1,9 @@
-package Pages;
+package Pages.SecondWeekSprint;
 
-import DriverWrapper.Web;
+import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-public class SprintSecondWeek_LandingPage extends BasePage{
+public class SprintSecondWeek_LandingPage extends BasePage {
     By enterOrder= By.xpath("(//a[@id='enter-orders'])[2]");
     By studentFlyerOrder = By.xpath("(//li[@id='student-flyer-orders'])[2]");
 

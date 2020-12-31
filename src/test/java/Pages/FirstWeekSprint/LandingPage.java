@@ -1,4 +1,4 @@
-package Pages;
+package Pages.FirstWeekSprint;
 
 import org.openqa.selenium.By;
 

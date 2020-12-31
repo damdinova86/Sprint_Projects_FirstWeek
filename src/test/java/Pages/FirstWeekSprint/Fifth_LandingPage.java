@@ -1,9 +1,6 @@
-package Pages;
+package Pages.FirstWeekSprint;
 
-import DriverWrapper.Web;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
 public class Fifth_LandingPage extends BasePage {
 

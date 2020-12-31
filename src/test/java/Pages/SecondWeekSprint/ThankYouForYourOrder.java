@@ -1,6 +1,6 @@
-package Pages;
+package Pages.SecondWeekSprint;
 
-import org.glassfish.grizzly.compression.lzma.impl.Base;
+import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class ThankYouForYourOrder extends BasePage {

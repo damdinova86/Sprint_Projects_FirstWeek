@@ -1,5 +1,6 @@
-package Pages;
+package Pages.SecondWeekSprint;
 
+import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class ReviewYourCart_Page extends BasePage {
@@ -11,7 +12,6 @@ public class ReviewYourCart_Page extends BasePage {
 
 
     public void proceedToCheckout() {
-        clickThis(reviewYorCart);
         scroll(checkout);
         waitUntilClickable(checkout);
         clickThis(checkout);

@@ -1,5 +1,6 @@
-package Pages;
+package Pages.SecondWeekSprint;
 
+import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class YTO_Page extends BasePage {

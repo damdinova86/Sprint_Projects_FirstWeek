@@ -1,7 +1,7 @@
-package StepDefinition;
+package StepDefinition.FirstWeekSprint_SD;
 
-import Pages.FourthTC_LandingPage;
-import Pages.MyAccountPage;
+import Pages.FirstWeekSprint.FourthTC_LandingPage;
+import Pages.FirstWeekSprint.MyAccountPage;
 import cucumber.api.java.en.Then;
 import org.testng.Assert;
 

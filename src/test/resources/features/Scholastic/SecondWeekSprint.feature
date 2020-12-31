@@ -1,7 +1,7 @@
 @scholastic
 Feature: Place an order by adding a new credit card
 
-  Scenario: TC12
+  Scenario: TC12 - Verify zero tax for SFO-YTO orders in the checkout for teacher with non-tax state school
     When I click Sign In
     And type email address username 'mmjmmkju@gmail.com'
     And type password 'poiu0987'
@@ -22,7 +22,7 @@ Feature: Place an order by adding a new credit card
 
 
 
-  Scenario: TC13
+  Scenario: TC13 - Verify tax is present for SFO-YTO orders in the checkout for teacher with tax state school
 
     When I click Sign In
     And type email address username 'zrmyfppqonmn@gmail.com'

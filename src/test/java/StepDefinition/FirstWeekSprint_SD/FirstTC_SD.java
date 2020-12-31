@@ -1,8 +1,8 @@
-package StepDefinition;
+package StepDefinition.FirstWeekSprint_SD;
 
-import Pages.LandingPage;
-import Pages.HomePage;
-import Pages.MyAccountPage;
+import Pages.FirstWeekSprint.LandingPage;
+import Pages.FirstWeekSprint.HomePage;
+import Pages.FirstWeekSprint.MyAccountPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

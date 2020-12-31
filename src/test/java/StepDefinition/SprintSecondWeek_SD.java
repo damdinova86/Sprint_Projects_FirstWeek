@@ -1,6 +1,6 @@
 package StepDefinition;
 
-import Pages.*;
+import Pages.SecondWeekSprint.*;
 import cucumber.api.java.en.Then;
 import org.testng.Assert;
 
@@ -12,6 +12,18 @@ public class SprintSecondWeek_SD {
     ReviewYourCart_Page rPage = new ReviewYourCart_Page();
     Checkout_Page cPage = new Checkout_Page();
     ShippingPayment spPage = new ShippingPayment();
+
+    //TC12
+
+    @Then("^Verify if Your Estimated Tax is zero for non-tax State school$")
+    public void VerifyTaxIsZero() {
+        cPage.yourEstimateTax();
+        double taxNumber = cPage.taxNum;
+        Assert.assertEquals(taxNumber, 0.0, "tax not equal to zero");
+
+
+    }
+
 
 
     // TC13

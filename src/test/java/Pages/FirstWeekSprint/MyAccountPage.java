@@ -1,4 +1,4 @@
-package Pages;
+package Pages.FirstWeekSprint;
 
 import DriverWrapper.Web;
 import org.openqa.selenium.By;
