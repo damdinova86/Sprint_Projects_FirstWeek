@@ -18,11 +18,19 @@ public class YTO_Page extends BasePage {
         clickThis(byFlyer);
     }
 
-    public void addQty(String data) {
+    public void addQuantityAndClickReview(String data) {
         enter(qty, data);
         scroll(reviewCart);
         clickThis(reviewCart);
     }
+
+    public void clickReviewCart() {
+        scroll(reviewCart);
+        clickThis(reviewCart);
+    }
+
+
+
 
 
 }

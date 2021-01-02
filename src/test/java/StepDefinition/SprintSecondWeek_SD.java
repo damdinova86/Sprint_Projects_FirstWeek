@@ -13,6 +13,53 @@ public class SprintSecondWeek_SD {
     Checkout_Page cPage = new Checkout_Page();
     ShippingPayment spPage = new ShippingPayment();
 
+    //TC7
+
+    @Then("^Verify items added and name of the student$")
+    public void verifyItemsEntered(){
+        rPage.verifyItemNumberAndName();
+        Assert.assertEquals(rPage.item1, "17S5", "Not the same item");
+        Assert.assertEquals(rPage.item2, "42J4", "Not the same item");
+        Assert.assertEquals(rPage.item3, "20S5", "Not the same number");
+        Assert.assertEquals(rPage.name, "Harry","Not the same student");
+    }
+
+
+
+
+    //TC10
+    @Then("^enter quantity '(.+)'$")
+    public void enterQTY(String data){
+        sPage.addQTY(data);
+    }
+
+
+
+    @Then("^click Review Cart$")
+    public void clickReview(){
+        yPage.clickReviewCart();
+    }
+
+
+    @Then("^get total for student and total for the item$")
+    public void getTotals(){
+        rPage.getTextFromStudentTotal();
+    }
+
+    @Then("^delete first item$")
+    public void delete(){
+       rPage.deleteItem();
+    }
+
+
+    @Then("^Verify the total amount is changed after deleting the item$")
+    public void verifyTotal(){
+        Assert.assertEquals(rPage.amountAfterDeduction, rPage.total- rPage.totalFirstItem, "Wrong result after deleting the item");
+    }
+
+
+
+
     //TC12
 
     @Then("^Verify if Your Estimated Tax is zero for non-tax State school$")
@@ -34,7 +81,7 @@ public class SprintSecondWeek_SD {
 
     @Then("^add quantity for one book '(.+)' and click Review Cart$")
     public void addQuantityAndClickReview(String data) {
-        yPage.addQty(data);
+        yPage.addQuantityAndClickReview(data);
     }
 
 

@@ -21,9 +21,9 @@ public class SixTC_ST {
 
     }
 
-    @When("^enter '(.+)'$")
-    public void enterName(String data){
-        sfoPage.enterNameBox(data);
+    @When("^enter '(.+)' and enter item number '(.+)' click Add and enter quantity '(.+)' after that$")
+    public void enterName(String word, String data, String number){
+        sfoPage.enterNameBox(word, data, number);
     }
     @When("^enter item number '(.+)'$")
     public void enterItemNum(String data){
