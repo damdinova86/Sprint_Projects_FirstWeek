@@ -1,6 +1,5 @@
 package Pages.SecondWeekSprint;
 
-import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class YTO_Page extends BasePage {
@@ -8,7 +7,7 @@ public class YTO_Page extends BasePage {
 
     By YTO = By.id("tab-yto");
     By byFlyer = By.xpath("//ul[@class='yto-by-item-default']/preceding::a[text()='By Flyer']");
-    By qty = By.xpath("//input[@data-itemid='1S4']");
+    By qty = By.xpath("//input[@data-itemid='1S5']");
     By reviewCart = By.xpath("//button[text()='Review Cart']");
 
 
@@ -28,9 +27,6 @@ public class YTO_Page extends BasePage {
         scroll(reviewCart);
         clickThis(reviewCart);
     }
-
-
-
 
 
 }

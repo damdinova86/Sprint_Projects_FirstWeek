@@ -1,6 +1,7 @@
 package Pages.FirstWeekSprint;
 
 import DriverWrapper.Web;
+import Pages.SecondWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {

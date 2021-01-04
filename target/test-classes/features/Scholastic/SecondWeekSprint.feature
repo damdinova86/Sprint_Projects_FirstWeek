@@ -1,6 +1,7 @@
 @scholastic
 Feature: Place an order by adding a new credit card
 
+  @smoke
   Scenario: TC7 -Verify teacher can add multiple books for a student in SFO
     When I click Sign In
     And type email address username 'mmjmmkju@gmail.com'
@@ -13,12 +14,50 @@ Feature: Place an order by adding a new credit card
     And enter 'Harry' and enter item number '42J4' click Add and enter quantity '4' after that
     And enter 'Harry' and enter item number '20S5' click Add and enter quantity '1' after that
     And Verify items added and name of the student
+    Then click Review Cart
+    And Verify if correct Student-total amount, items and quantity and SFO Total
+
+  @smoke
+  Scenario: TC8 - Verify teacher can add multiple books for multiple students in SFO
+    When I click Sign In
+    And type email address username 'zrmyfppqonmn@gmail.com'
+    And type password 'poiu0987'
+    Then click Sign in
+    And click close the curtains
+    And Navigate to enter orders
+    Then click to Student Fryer Orders
+    When enter 'Harry' and enter item number '17S5' click Add and enter quantity '5' after that
+    And enter 'Harry' and enter item number '42J4' click Add and enter quantity '1' after that
+    And enter 'John' and enter item number '20S5' click Add and enter quantity '2' after that
+    And enter 'John' and enter item number '19S5' click Add and enter quantity '2' after that
+    And enter 'Michael' and enter item number '18S5' click Add and enter quantity '4' after that
+    And enter 'Michael' and enter item number '34B4' click Add and enter quantity '10' after that
+    And Verify correct student names, item numbers gets added under SFO
+    Then click Review Cart
+    And Verify if correct Student-total for every student and SFO Total
 
 
+  @smoke
+  Scenario: TC9 - Verify zero tax for only SFO order in the checkout (Login with user with school in taxed state (eg: NY))
+    When I click Sign In
+    And type email address username 'zrmyfppqonmn@gmail.com'
+    And type password 'poiu0987'
+    Then click Sign in
+    And click close the curtains
+    And Navigate to enter orders
+    Then click to Student Fryer Orders
+    When enter 'Harry' and enter item number '17S5' click Add and enter quantity '5' after that
+    And enter 'Harry' and enter item number '42J4' click Add and enter quantity '1' after that
+    And enter 'John' and enter item number '20S5' click Add and enter quantity '2' after that
+    And enter 'John' and enter item number '19S5' click Add and enter quantity '2' after that
+    And enter 'Michael' and enter item number '18S5' click Add and enter quantity '4' after that
+    And enter 'Michael' and enter item number '34B4' click Add and enter quantity '10' after that
+    Then click Review Cart
+    And click proceed to checkout second time click proceed to checkout
+    And Verify if there tax is zero
 
 
-
-
+  @smoke
   Scenario: TC10 - Verify user can delete item on Cart page
     When I click Sign In
     And type email address username 'mmjmmkju@gmail.com'
@@ -39,7 +78,7 @@ Feature: Place an order by adding a new credit card
     And Verify the total amount is changed after deleting the item
 
 
-
+  @smoke
   Scenario: TC12 - Verify zero tax for SFO-YTO orders in the checkout for teacher with non-tax state school
     When I click Sign In
     And type email address username 'mmjmmkju@gmail.com'
@@ -59,7 +98,7 @@ Feature: Place an order by adding a new credit card
     And click proceed to checkout second time click proceed to checkout
     And Verify if Your Estimated Tax is zero for non-tax State school
 
-
+  @smoke
   Scenario: TC13 - Verify tax is present for SFO-YTO orders in the checkout for teacher with tax state school
 
     When I click Sign In
@@ -80,7 +119,7 @@ Feature: Place an order by adding a new credit card
     And click proceed to checkout second time click proceed to checkout
     And Verify if there tax greater than zero
 
-
+  @smoke
   Scenario: TC15 - Verify user can place an order by adding a new credit card
 
     When I click Sign In
@@ -94,7 +133,7 @@ Feature: Place an order by adding a new credit card
     And enter 'John' and enter item number '20S5' click Add and enter quantity '2' after that
     Then click Review Cart
     And click proceed to checkout second time click proceed to checkout
-    Then click continue checkout
+    And click continue checkout
     And click Ship To MySchool
     And click Select Payment Method
     And enter a new credit card number '4222222222222'

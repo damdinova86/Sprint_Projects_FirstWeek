@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = {"stepDefinition", "DriverWrapper"},
 
         //specify tags to be  executed
-        tags = {"@TC10-start,@TC10, @TC10-end"},
+        tags = {"@smoke"},
 
         //readable console logs
         monochrome = true,

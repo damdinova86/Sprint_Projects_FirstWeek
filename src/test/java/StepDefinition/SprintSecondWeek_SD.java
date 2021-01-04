@@ -2,6 +2,8 @@ package StepDefinition;
 
 import Pages.SecondWeekSprint.*;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import org.apache.http.util.Asserts;
 import org.testng.Assert;
 
 public class SprintSecondWeek_SD {
@@ -15,49 +17,80 @@ public class SprintSecondWeek_SD {
 
     //TC7
 
-    @Then("^Verify items added and name of the student$")
-    public void verifyItemsEntered(){
-        rPage.verifyItemNumberAndName();
-        Assert.assertEquals(rPage.item1, "17S5", "Not the same item");
-        Assert.assertEquals(rPage.item2, "42J4", "Not the same item");
-        Assert.assertEquals(rPage.item3, "20S5", "Not the same number");
-        Assert.assertEquals(rPage.name, "Harry","Not the same student");
+    @When("^Verify items added and name of the student$")
+    public void verifyItemsEntered() {
+        sPage.verifyItemNumberAndName();
+        Assert.assertEquals(sPage.item1, "17S5", "Not the same item");
+        Assert.assertEquals(sPage.item2, "42J4", "Not the same item");
+        Assert.assertEquals(sPage.item3, "20S5", "Not the same number");
+        Assert.assertEquals(sPage.name, "Harry", "Not the same student");
+    }
+
+    @When("^Verify correct student names, item numbers gets added under SFO$")
+    public void verifyItemsEnteredNamesAndQTY() {
+        sPage.verifyItemsEnteredNamesAndQTY();
+        Assert.assertEquals(sPage.item1, "17S5", "Not the same item");
+        Assert.assertEquals(sPage.item2, "42J4", "Not the same item");
+        Assert.assertEquals(sPage.name, "Harry", "Not the same student as Harry");
+        Assert.assertEquals(sPage.item1J, "20S5", "Not the same item");
+        Assert.assertEquals(sPage.item2J, "19S5", "Not the same item");
+        Assert.assertEquals(sPage.name1, "John", "Not the same student as John");
+        Assert.assertEquals(sPage.item1M, "18S5", "Not the same item");
+        Assert.assertEquals(sPage.item2M, "34B4", "Not the same item");
+        Assert.assertEquals(sPage.name2, "Michael", "Not the same student as John");
+    }
+
+    @Then("^Verify if correct Student-total for every student and SFO Total$")
+    public void verifyStudentTotalForEachStudentAndSFOTotal() {
+        rPage.verifySFOAllStudents();
+        Assert.assertEquals(rPage.namesTotal, rPage.SFONum, "There are not 3 names");
+        Assert.assertEquals(rPage.totalAll, rPage.totalSFO, "Not the same total with SFO");
+        Assert.assertEquals(rPage.allStudentsTotal, rPage.totalForAll, "Different total amount");
+        Assert.assertEquals(rPage.qtyBox, rPage.QtyTotal, "Quantity is different");
+
+
     }
 
 
+    @Then("^Verify if correct Student-total amount, items and quantity and SFO Total$")
+    public void verifyAmountItemsQuantityAndSFOTotal() {
+        rPage.quantityTotal();
+        Assert.assertEquals(rPage.totalQTY, "7", "The total qty is different than total qty entered");
+        Assert.assertEquals(rPage.totalSFO, rPage.totalHarry, "Totals are not the same");
+        Assert.assertEquals(rPage.length, rPage.SFONum, "Student number is not correct");
+        Assert.assertEquals(rPage.itemTotal1 * 2 + rPage.itemTotal2 * 1 + rPage.itemTotal3 * 4, rPage.HarryTotal,
+                "Different total after checking all items total");
+    }
 
 
     //TC10
     @Then("^enter quantity '(.+)'$")
-    public void enterQTY(String data){
+    public void enterQTY(String data) {
         sPage.addQTY(data);
     }
 
 
-
     @Then("^click Review Cart$")
-    public void clickReview(){
+    public void clickReview() {
         yPage.clickReviewCart();
     }
 
 
     @Then("^get total for student and total for the item$")
-    public void getTotals(){
+    public void getTotals() {
         rPage.getTextFromStudentTotal();
     }
 
     @Then("^delete first item$")
-    public void delete(){
-       rPage.deleteItem();
+    public void delete() {
+        rPage.deleteItem();
     }
 
 
     @Then("^Verify the total amount is changed after deleting the item$")
-    public void verifyTotal(){
-        Assert.assertEquals(rPage.amountAfterDeduction, rPage.total- rPage.totalFirstItem, "Wrong result after deleting the item");
+    public void verifyTotal() {
+        Assert.assertEquals(rPage.amountAfterDeduction, rPage.total - rPage.totalFirstItem, "Wrong result after deleting the item");
     }
-
-
 
 
     //TC12
@@ -70,7 +103,6 @@ public class SprintSecondWeek_SD {
 
 
     }
-
 
 
     // TC13
@@ -90,13 +122,19 @@ public class SprintSecondWeek_SD {
         rPage.proceedToCheckout();
     }
 
+    @Then("^Verify if there tax is zero$")
+    public void verifyTaxIsZero() {
+        cPage.yourEstimateTax();
+        double taxNumber = cPage.taxNum;
+        Assert.assertEquals(taxNumber, 0.0, "tax number is not zero");
+    }
+
+
     @Then("^Verify if there tax greater than zero$")
     public void verifyTax() {
         cPage.yourEstimateTax();
         double taxNumber = cPage.taxNum;
         Assert.assertTrue(taxNumber > 0, "tax number is not greater than zero");
-
-
     }
 
 

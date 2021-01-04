@@ -1,6 +1,5 @@
 package Pages.SecondWeekSprint;
 
-import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class ShippingPayment extends BasePage {
@@ -31,7 +30,8 @@ public class ShippingPayment extends BasePage {
 
 
     public void selectPaymentMethod() {
-        waitUntilClickable(paymentMethod);
+        scroll(paymentMethod);
+      sleepMethod();
         clickThis(paymentMethod);
         waitUntilElementVisible(creditCard);
         clickThis(creditCard);
@@ -54,6 +54,7 @@ public class ShippingPayment extends BasePage {
     }
 
     public void enterSecurityCode(String data) {
+        sleepMethod();
         enter(cvn, data);
     }
 

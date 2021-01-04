@@ -1,6 +1,5 @@
 package Pages.SecondWeekSprint;
 
-import Pages.FirstWeekSprint.BasePage;
 import org.openqa.selenium.By;
 
 public class SprintSecondWeek_LandingPage extends BasePage {
